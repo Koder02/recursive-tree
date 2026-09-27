@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive recursive tree experiment built with p5.js." />
+  <title>Recursive Tree — Creative Coding Experiment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#">KRISHNA<span>/</span>CODE</a>
+      <div class="experiment-label">P5.JS / EXPERIMENT 02</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <p class="eyebrow">CREATIVE CODING · RECURSION</p>
+          <h1>Recursive<br><em>Tree.</em></h1>
+          <p class="lede">A living geometry experiment where a simple rule creates an endlessly branching form.</p>
+        </div>
+        <div class="hint"><span>↔</span> Move across the canvas or use the controls to shape the tree.</div>
+      </section>
+
+      <section class="experiment" aria-label="Interactive recursive tree experiment">
+        <div class="canvas-wrap">
+          <div id="canvas-container"></div>
+          <div class="canvas-corner">INTERACTIVE / REAL-TIME</div>
+        </div>
+
+        <aside class="controls">
+          <div class="control-header">
+            <span>CONTROL PANEL</span>
+            <button id="resetBtn" type="button">RESET</button>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label"><span>BRANCH ANGLE</span><output id="angleValue">45°</output></div>
+            <input id="angleSlider" type="range" min="0" max="90" value="45" step="1" aria-label="Branch angle">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label"><span>BRANCH RATIO</span><output id="ratioValue">0.66</output></div>
+            <input id="ratioSlider" type="range" min="0.55" max="0.75" value="0.66" step="0.01" aria-label="Branch length ratio">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label"><span>MAX DEPTH</span><output id="depthValue">11</output></div>
+            <input id="depthSlider" type="range" min="5" max="14" value="11" step="1" aria-label="Maximum recursion depth">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label"><span>HUE SHIFT</span><output id="hueValue">0°</output></div>
+            <input id="hueSlider" type="range" min="0" max="360" value="0" step="1" aria-label="Hue shift">
+          </div>
+
+          <div class="stats">
+            <div><span>ANGLE</span><strong id="statAngle">45°</strong></div>
+            <div><span>RATIO</span><strong id="statRatio">0.66</strong></div>
+            <div><span>DEPTH</span><strong id="statDepth">11</strong></div>
+          </div>
+
+          <p class="tip"><span>TIP</span> Try 30–45° for a classic branching silhouette. Push the angle higher to create more abstract forms.</p>
+        </aside>
+      </section>
+
+      <section class="info-grid">
+        <article>
+          <p class="eyebrow">THE IDEA</p>
+          <h2>One rule.<br>Many branches.</h2>
+          <p>The tree is generated recursively. Each branch creates two smaller branches until the length reaches the stopping condition.</p>
+        </article>
+        <article class="formula">
+          <p class="eyebrow">THE SYSTEM</p>
+          <div class="flow"><span>BRANCH</span><b>→</b><span>SHRINK</span><b>→</b><span>SPLIT</span><b>→</b><span>REPEAT</span></div>
+          <p>Change the parameters above and the same simple algorithm produces a completely different visual structure in real time.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>KRISHNA PATEL · CREATIVE CODING</span>
+      <span>BUILT WITH P5.JS</span>
+    </footer>
+  </div>
+
+  <script src="p5.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
